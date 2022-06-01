@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Poppins&family=Raleway:wght@900&display=swap');
+
+body {
+    background-color: #462d26;
+    overflow: none;
+}
+.container {
+    width: 200x;
+    height: 200x;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container #uptitle {
+    font-family: 'Raleway';
+    font-size: 30px;
+    color: #f08149;
+}
+
+.container #reactiveContent {
+    font-family: 'Inter';
+    color: #fff;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+footer a, footer p {
+    margin: 5px;
+}
+
+footer #text {
+    font-family: 'Poppins';
+    color: #fff;
+}
+
+footer a {
+    font-family: 'Poppins';
+    color: #bd3b3b;
+}
