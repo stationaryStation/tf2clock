@@ -15,7 +15,7 @@ const Home = () => {
             <meta property="description" content="Site made by Stationarystation" />
             <meta property="og:title" content={`${difference_in_days} days since Jungle Inferno`} key="title" />
             <meta property="og:description" content="Site made by Stationarystation" />
-            <meta property="og:image" content="../public/assets/img/wide.png" />
+            <meta property="og:image" content="https://github.com/stationaryStation/tf2clock/blob/master/public/assets/img/wide.png?raw=true" />
         </Head>
 
         <div className="container">
