@@ -25,7 +25,7 @@ const Home = () => {
             SetSinceHours(difference_in_hours);
             SetSinceMinutes(difference_in_minutes);
             SetSinceSeconds(difference_in_seconds);
-        }, 1000);
+        }, 10);
     }, [difference_in_days,difference_in_time, difference_in_hours, difference_in_minutes, difference_in_seconds])
 
     return (
