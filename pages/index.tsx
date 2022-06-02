@@ -11,12 +11,16 @@ const Home = () => {
     const difference_in_hours = Math.floor(Math.abs(currentDate.getTime() - JungleInferno.getTime()) /  36e5);
     const difference_in_minutes = Math.floor((Math.abs(currentDate.getTime() - JungleInferno.getTime()) /  36e5) * 60);
     const difference_in_seconds = Math.floor((Math.abs(currentDate.getTime() - JungleInferno.getTime()) /  36e5) * 60 * 60);
+    const difference_in_months = JungleInferno.getMonth() - currentDate.getMonth() + 12 * (currentDate.getFullYear() - JungleInferno.getFullYear());
+    const difference_in_years = currentDate.getFullYear() - JungleInferno.getFullYear();
 
     const [SinceMS, SetSinceMs] = useState<number>(0);
     const [SinceDays, SetSinceDays] = useState<number>(0);
     const [SinceHours, SetSinceHours] = useState<number>(0);
     const [SinceMinutes, SetSinceMinutes] = useState<number>(0);
     const [SinceSeconds, SetSinceSeconds] = useState<number>(0);
+    const [SinceMonths, SetSinceMonths] = useState<number>(0);
+    const [SinceYears, SetSinceYears] = useState<number>(0);
 
     useEffect(() => {
         setTimeout(() => {
@@ -25,8 +29,10 @@ const Home = () => {
             SetSinceHours(difference_in_hours);
             SetSinceMinutes(difference_in_minutes);
             SetSinceSeconds(difference_in_seconds);
+            SetSinceMonths(difference_in_months);
+            SetSinceYears(difference_in_years);
         }, 10);
-    }, [difference_in_days,difference_in_time, difference_in_hours, difference_in_minutes, difference_in_seconds])
+    }, [difference_in_days,difference_in_time, difference_in_hours, difference_in_minutes, difference_in_seconds, difference_in_months, difference_in_years])
 
     return (
         <>
@@ -34,13 +40,17 @@ const Home = () => {
             <title>{difference_in_days} Days since Jungle Inferno</title>
             <meta property="description" content="Site made by Stationarystation" />
             <meta property="og:title" content={`${difference_in_days} days since Jungle Inferno`} key="title" />
-            <meta property="og:description" content={`It has been: ${difference_in_days} days or ${difference_in_hours} hours or ${difference_in_minutes} minutes or ${difference_in_seconds} seconds or ${difference_in_time} ms since jungle inferno released`} key="description" />
+            <meta property="og:description" content={`It has been: ${difference_in_years} years or ${difference_in_months} months or ${difference_in_days} days or ${difference_in_hours} hours or ${difference_in_minutes} minutes or ${difference_in_seconds} seconds or ${difference_in_time} ms since jungle inferno released`} key="description" />
             <meta property="og:image" content="https://github.com/stationaryStation/tf2clock/blob/master/public/assets/img/wide.png?raw=true" key="img" />
         </Head>
 
         <div className="container">
-            <p id="uptitle">Days since Jungle Inferno:</p>
-            <p id="reactiveContent">{SinceDays} days</p>
+            <p id="uptitle">Years since Jungle Inferno:</p>
+            <p id="reactiveContent">{SinceYears} years</p>
+        </div>
+        <div className="container">
+            <p id="uptitle">Months since Jungle Inferno:</p>
+            <p id="reactiveContent">{SinceMonths} months</p>
         </div>
         <div className="container">
             <p id="uptitle">Hours since Jungle Inferno:</p>
