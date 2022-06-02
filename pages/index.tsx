@@ -53,6 +53,10 @@ const Home = () => {
             <p id="reactiveContent">{SinceMonths} months</p>
         </div>
         <div className="container">
+            <p id="uptitle">Days since Jungle Inferno:</p>
+            <p id="reactiveContent">{SinceDays} days</p>
+        </div>
+        <div className="container">
             <p id="uptitle">Hours since Jungle Inferno:</p>
             <p id="reactiveContent">{SinceHours} hours</p>
         </div>
